@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+        <link rel="stylesheet" href="./side-menu.css">
+        <script src="./Chart/Chart.js"></script>
+        
+        <style>
+            canvas{
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div id="layout">
+            <a href="#menu" id="menuLink" class="pure-menu-link">
+            <!-- Hamburger icon -->
+            <span></span>
+            </a>
+            <div id="menu">
+                <div class="pure-menu pure-menu-open">
+                    <a class="pure-menu-heading" href="index.html">Home</a>
+                    <ul>
+                        <li><a href="profile.html" class="pure-menu-selected menu-item-divided">Profile</a></li>
+                        <li><a href="rankings.html" >Rankings</a></li>
+                        
+                        <li>
+                            <a href="control.html">Control Center</a>
+                        </li>
+                        <li><a href="upgrades.html">Upgrades</a></li>
+                        <li><a href="achievments.html">Achievements</a></li>
+                        <li><a href="donations.html">Donations</a></li>
+                        
+                        <li class="menu-item-divided">
+                            <a href="prizes.html">Prizes</a>
+                        </li>
+                        <li><a href="about.html">Learn more</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="main">
+                <div class="header">
+                    <h1>Profile</h1>
+                    <h2>All about: you.</h2>
+                </div>
+                
+                <div class="content">
+
+                    <h2 class="content-subhead">Club Name:</h2>
+                    <p>Science Olympiad</p>
+
+                    <h2 class="content-subhead">Sponser:</h2>
+                    <p>Ms. Holman</p>
+
+                    <h2 class="content-subhead">Data:</h2>
+                    <p> Blue - Input &nbsp; Grey - Output </p>
+
+
+
+                    <div class="pure-g">
+                        <div class="pure-u-1-2">
+                            <canvas id="bar" height="200" width="350"></canvas>
+
+                        </div>
+                        <div class="pure-u-1-2">
+                             <canvas id="line" height="200" width="350"></canvas>
+
+                        </div>
+
+                        <div class="pure-u-1-2">
+                            <p> Percent of Total Input: </p>
+                             <canvas id="pie" height="200" width="350"></canvas>
+
+                        </div>
+                       
+                        <div class="pure-u-1-2">
+                            <p> Percent of Total Output: </p>
+                             <canvas id="pie2" height="200" width="350"></canvas>
+
+                        </div>
+                        
+                    </div>
+
+                    
+
+
+                    <script>
+
+                        var barChartData = {
+                            labels : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                            datasets : [
+                                {
+                                    fillColor : "rgba(220,220,220,0.5)",
+                                    strokeColor : "rgba(220,220,220,1)",
+                                    data : [90,30,20,34,26,11,93]
+                                },
+                                {
+                                    fillColor : "rgba(151,187,205,0.5)",
+                                    strokeColor : "rgba(151,187,205,1)",
+                                    data : [87,11,25,33,28,8,95]
+                                }
+                            ]
+                            
+                        }
+
+                        var myLine = new Chart(document.getElementById("bar").getContext("2d")).Bar(barChartData);
+    
+                     </script>
+
+                     <script>
+
+                        var lineChartData = {
+                            labels : ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+                            datasets : [
+                                {
+                                    fillColor : "rgba(220,220,220,0.5)",
+                                    strokeColor : "rgba(220,220,220,1)",
+                                    pointColor : "rgba(220,220,220,1)",
+                                    pointStrokeColor : "#fff",
+                                    data : [90,30,20,34,26,11,93]
+                                },
+                                {
+                                    fillColor : "rgba(151,187,205,0.5)",
+                                    strokeColor : "rgba(151,187,205,1)",
+                                    pointColor : "rgba(151,187,205,1)",
+                                    pointStrokeColor : "#fff",
+                                    data : [87,11,25,33,28,8,95]
+                                }
+                            ]
+                            
+                        }
+
+                        var myLine = new Chart(document.getElementById("line").getContext("2d")).Line(lineChartData);
+                    
+                    </script>
+
+                    <script>
+
+                        var pieData = [
+                                {
+                                    value: 20,
+                                    color:"#F38630"
+                                },
+                                {
+                                    value : 340,
+                                    color : "#E0E4CC"
+                                },
+                                                          
+                            ];
+
+                        var pieData2 = [
+                                {
+                                    value: 10,
+                                    color:"#F38630"
+                                },
+                                {
+                                    value : 350,
+                                    color : "#E0E4CC"
+                                },
+                                                          
+                            ];
+
+                         
+                         var myPie = new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
+
+                         var myPie = new Chart(document.getElementById("pie2").getContext("2d")).Pie(pieData2);
+                            
+                    </script>
+
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
