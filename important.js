@@ -31,6 +31,10 @@ function updatePurchasable(){//Are we going to base purchasing upgrades on click
 			$('#but' + i).removeClass().addClass("pure-button pure-button-disabled");
 	}
 }
+
+
+
+
 function updateClicks(){
 	$('.pclicks').html(yourClicks);
 	//Below is code to update the donation based on the clicks. There'll likely be an algorithm to this, like 5 clicks is one dollar. Let's presume that that is the case.
