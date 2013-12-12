@@ -6,7 +6,7 @@
         <script src="./Chart/Chart.js"></script>
         <script src="jquery.js"></script>                
         <script src="important.js"></script>  
-        <script src="jquery.mobile.custom.js"></script>
+        <script src="./jquery.mobile.custom.js"></script>
 
 
 
@@ -29,8 +29,8 @@
             }
 
             div.box {
-            width: 50em;
-            height: 10em;
+            width: 10em;
+            height: 5em;
             background-color: #108040;
             }
 
@@ -278,9 +278,16 @@
                             <h2 class="content-subhead">Click to Generate!</h2>
                             <div class="pure-g">
                                 <div class="pure-u-1-2">
-                                    <p></p>
+                                    
                                     <!--<button class="pure-button pure-button-input" onclick = "increaseClicks()">CLICK</button>-->
                                     <div class="box"></div>
+
+                                    <script>
+                                    $(function(){
+                                      $( "div.box" ).bind( "tap", increaseClicks );
+                                     
+                                     });
+                                    </script>
 
                                 </div>
                             </div>
