@@ -42,7 +42,7 @@ function updateClicks(){
 	cash = (Math.round(cash*100)/100).toFixed(2); //rounding so the cash stays nice and formatted
 	$('.pdon').html(cash);
 }
-function increaseClicks(){
+function increaseClicks( event ){
 	yourClicks++;
 	updateClicks();
 	updatePurchasable();	
