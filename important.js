@@ -8,6 +8,7 @@ $(function(){
     updatePurchasable();
     updateClicks();
 });
+
 function hideStuff(n){
     for(var i = 1; i <= numDivs; i++){
         if(n!=i){
@@ -20,6 +21,10 @@ function hideStuff(n){
         }
     }
 }
+
+
+
+ 
 
 function updatePurchasable(){//Are we going to base purchasing upgrades on click-count or on $$$ donated?
 	for(var i = 1; i <= numPurchases; i++){

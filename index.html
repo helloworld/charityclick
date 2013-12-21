@@ -57,22 +57,88 @@
                 <div class="pure-menu pure-menu-open">
                     <a class="pure-menu-heading" href="index.html">Home</a>
                     <ul>
-                        <li><a href="javascript:hideStuff(1)" id="men1" class="pure-menu-selected menu-item-divided">Profile</a></li>
-                        <li><a href="javascript:hideStuff(2)" id="men2">Rankings</a></li>
+                        <li><a  id="men1" class="pure-menu-selected menu-item-divided">Profile</a></li>
+                        <li><a  id="men2">Rankings</a></li>
 
                         <li>
-                            <a href="javascript:hideStuff(3)" id="men3">Control Center</a>
+                            <a id="men3">Control Center</a>
                         </li>
-                        <li><a href="javascript:hideStuff(4)" id="men4">Upgrades</a></li>
-                        <li><a href="javascript:hideStuff(5)" id="men5">Achievements</a></li>
-                        <li><a href="javascript:hideStuff(6)" id="men6">Donations</a></li>
+                        <li><a id="men4">Upgrades</a></li>
+                        <li><a  id="men5">Achievements</a></li>
+                        <li><a  id="men6">Donations</a></li>
 
                         <li class="menu-item-divided">
-                            <a href="javascript:hideStuff(7)" id="men7">Prizes</a>
+                            <a  id="men7">Prizes</a>
                         </li>
-                        <li><a href="javascript:hideStuff(8)" id="men8">Learn more</a></li>
+                        <li><a  id="men8">Learn more</a></li>
                     </ul>
                 </div>
+                
+                 <script>
+                    $(function(){
+                        $( "#men1" ).bind( "tap", function() 
+                        {            
+                            hideStuff(1);
+                        }
+                        );  
+                    });
+                     
+                    $(function(){
+                        $( "#men2" ).bind( "tap", function() 
+                        {            
+                            hideStuff(2);
+                        }
+                        );  
+                    });
+                     
+                    $(function(){
+                        $( "#men3" ).bind( "tap", function() 
+                        {            
+                            hideStuff(3);
+                        }
+                        );  
+                    });
+                     
+                    $(function(){
+                        $( "#men4" ).bind( "tap", function() 
+                        {            
+                            hideStuff(4);
+                        }
+                        );  
+                    });
+                     
+                    $(function(){
+                        $( "#men5" ).bind( "tap", function() 
+                        {            
+                            hideStuff(5);
+                        }
+                        );  
+                    });
+                    
+                    $(function(){
+                        $( "#men6" ).bind( "tap", function() 
+                        {            
+                            hideStuff(6);
+                        }
+                        );  
+                    });
+                     
+                    $(function(){
+                        $( "#men7" ).bind( "tap", function() 
+                        {            
+                            hideStuff(7);
+                        }
+                        );  
+                    });
+                     
+                    $(function(){
+                        $( "#men8" ).bind( "tap", function() 
+                        {            
+                            hideStuff(8);
+                        }
+                        );  
+                    });
+                </script>
             </div>
 
             <div id="div1" style="display:none;">
