@@ -1,0 +1,460 @@
+<!-- <head>
+  <title>Test 1.0</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="header">
+    </div>
+    <h1>Test 1.0</h1>
+ 
+    {{> leaderboard}}
+    {{> once}}
+  </div>
+</body>
+
+<template name="leaderboard">
+  <table class="leaderboard table table-striped">
+    <thead>
+      <th>Username</th><th>Money</th><th>Dollars per Second</th>
+    </thead>
+
+    <tbody>
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </tbody>
+  </table>
+
+</template>
+
+<template name ="once">
+
+  <h2>{{#if currentUser}}You ({{user.username}}) have ${{formatCurrency user.money}} and make ${{formatCurrency user.rate}} per second!{{else}}Sign in to play!{{/if}}</h2>
+    {{loginButtons}}<p>
+
+  <div class="details">
+    <input type="button" class="code btn span4" id="clicker" value="=($25)" />
+    {{#each items}}
+    <input type="button" class="buy btn span4" id="{{cost}}" value="Buy {{name}} (${{formatCurrency cost}})" />
+    {{/each}}
+  </div>
+</template>
+
+<template name="player">
+  <tr class="player">
+    <td class="name">{{username}}</td>
+    <td class="money">${{formatCurrency money}}</td>
+    <td class="rate">{{formatCurrency rate}} dps</td>
+  </tr>
+</template>
+
+<template name="weirdShit">
+
+
+
+
+
+  </template>
+
+ -->
+
+
+
+
+
+
+    <body>
+
+        <div id="layout">
+            <a href="#menu" id="menuLink" class="pure-menu-link">
+                <!-- Hamburger icon -->
+                <span></span>
+            </a>
+            <div id="menu">
+                <div class="pure-menu pure-menu-open">
+                    <a class="pure-menu-heading" href="index.html" onclick="switchTabs(div1)">Home</a>
+                    <ul>
+                        <li><a  id="men1" class="pure-menu-selected menu-item-divided" onclick="switchTabs(div1)">Profile</a></li>
+                        <li><a  id="men2" onclick="switchTabs(div1)">Rankings</a></li>
+
+                        <li>
+                            <a id="men3" onclick="switchTabs(div2)">Control Center</a>
+                        </li>
+                        <li><a id="men4" onclick="switchTabs(div3)">Upgrades</a></li>
+                        <li><a  id="men5">Achievements</a></li>
+                        <li><a  id="men6">Donations</a></li>
+
+                        <li class="menu-item-divided">
+                            <a  id="men7">Prizes</a>
+                        </li>
+                        <li><a  id="men8">Learn more</a></li>
+                    </ul>
+                </div>
+                
+                 <script>
+
+                </script>
+            </div>
+
+            <div id="pageContent">
+
+            </div>
+
+                    </div>
+
+
+
+                </body>
+
+
+
+
+            <template name="div1">
+                <div class="header">
+                    <h1>Profile</h1>
+                    <h2>All about: you.</h2>
+                </div>
+
+                <div class="content">
+
+                    <h2 class="content-subhead">Club Name:</h2>
+                    <p>Science Olympiad</p>
+
+                    <h2 class="content-subhead">Sponsor:</h2>
+                    <p>Ms. Holman</p>
+
+                    <h2 class="content-subhead">Click Data:</h2>
+
+                    <div class="pure-g">
+                        <div class="pure-u-1-2">
+                            <canvas id="bar" height="200" width="350"></canvas>
+
+                        </div>
+                        <div class="pure-u-1-2">
+                            <canvas id="line" height="200" width="350"></canvas>
+
+                        </div>
+
+                        <div class="pure-u-1-2">
+                            <p> Your contribution to club clicks: </p>
+                            <canvas id="pie" height="200" width="350"></canvas>
+
+                        </div>
+
+                    </div>
+
+
+                    </div>
+                </template>
+
+                <template name = "div2">
+                    <div class="header">
+                        <h1>Rankings</h1>
+                        <h2>Who's in the lead.</h2>
+                    </div>
+
+                    <div class="content">
+
+                        <h2 class="content-subhead">Next Deadline:</h2>
+                        <p>February 29, 2014</p>
+
+                        <h2 class="content-subhead">All teams:</h2>
+                        <div class="pure-menu pure-menu-open pure-menu-horizontal">
+                            <ul>
+                                <li class="pure-menu-selected"><a href="#">All Time</a></li>
+                                <li ><a href="#">This month</a></li>
+                                <li><a href="#">Today</a></li>
+                            </ul>
+                        </div>
+
+                        <br>
+
+                            <table class="pure-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Club Name</th>
+                                        <th>Total Money</th>
+                                        <th>Output:</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Science Olympiad</td>
+                                        <td>$1,493,312,123</td>
+                                        <td>$6,000,000,000,000,000</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td>
+                                        <td>TSA</td>
+                                        <td>$1,432,889,983</td>
+                                        <td>$9,33,5355,0030</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td>
+                                        <td>One and Together</td>
+                                        <td>$1,232,232,344</td>
+                                        <td>$2,323,8980,882</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </template>
+
+                    <template name = "div3">
+                        <div class="header">
+                            <h1>Control Center</h1>
+                            <h2>click.</h2>
+                        </div>
+
+                        <div class="content">
+                            <h2 class="content-subhead">Current Efficiency:</h2>
+                            <div class="pure-g">
+                                <div class="pure-u-1-2">
+                                    <p>CLUB CLICKS: </p>
+                                    <p>30000</p>
+                                </div>
+                                <div class="pure-u-1-2">
+                                    <p>CLUB DONATION: </p>
+                                    <p>$3000</p>
+                                </div>
+                                <div class="pure-u-1-2">
+                                    <p>YOUR CLICKS: </p>
+                                    <p class="pclicks">500</p>
+                                </div>
+                                <div class="pure-u-1-2">
+                                    <p>YOUR DONATION: </p>
+                                    <p>$<span class="pdon">42</span></p>
+                                </div>
+
+                            </div>
+                            <h2 class="content-subhead">Click to Generate!</h2>
+                            <div class="pure-g">
+                                <div class="pure-u-1-2">
+                                    
+                                    <!--<button class="pure-button pure-button-input" onclick = "increaseClicks()">CLICK</button>-->
+                                    <div class="box">Click!</div>
+<!-- 
+                                    <script>
+                                    $(function(){
+                                      $( "div.box" ).bind( "tap", increaseClicks );
+                                     
+                                     });
+                                    </script>
+ -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </teamplate>
+
+                    <template name = "div4">
+                        <div class="header">
+                            <h1>Upgrades</h1>
+                            <h2>Improve your game.</h2>
+                        </div>
+
+                        <div class="content">
+                            <h2 class="content-subhead">Current Efficiency:</h2>
+                            <div class="pure-g">
+                                <div class="pure-u-1-2">
+                                    <p>CLUB CLICKS: </p>
+                                    <p>30000</p>
+                                </div>
+                                <div class="pure-u-1-2">
+                                    <p>CLUB DONATION: </p>
+                                    <p>$3000</p>
+                                </div>
+                                <div class="pure-u-1-2">
+                                    <p>YOUR CLICKS: </p>
+                                    <p class="pclicks">500</p>
+                                </div>
+                                <div class="pure-u-1-2">
+                                    <p>YOUR DONATION: </p>
+                                    <p>$<span class="pdon">42</span></p>
+                                </div>
+
+                            </div>
+                            <h2 class="content-subhead">Upgrades:</h2>
+                            <table class="pure-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Cost</th>
+                                        <th>Purchase</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>Magic</td>
+                                        <td>Increases your click-count by 100</td>
+                                        <td id="cost1">300</td>
+                                        <td><dbutton id="but1" class="pure-button">Buy</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Professional Designer</td>
+                                        <td>Creates beautiful print ad, generated $1000 more per second.</td>
+                                        <td id="cost2">900</td>
+                                        <td><button id="but2" class="pure-button">Buy</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Endorsement by Jay-Z</td>
+                                        <td>Capture the mind of young teens everywhere</td>
+                                        <td id="cost3">44,000,000</td>
+                                        <td><button id="but3" class="pure-button pure-button-disabled">Buy</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Create emotional ad</td>
+                                        <td>Money weeps into your pocket</td>
+                                        <td id="cost4">99,000,000</td>
+                                        <td><button id="but4" class="pure-button pure-button-disabled">Buy</button></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </template>
+
+                    <template name = "div5">
+                        <div class="header">
+                            <h1>Achievments</h1>
+                            <h2>*Few may be hidden*</h2>
+                        </div>
+
+                        <div class="content">
+
+
+                            <h2 class="content-subhead">Current Achievements</h2>
+                            <table class="pure-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Reward</th>
+                                        <th>Completed</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>First hour</td>
+                                        <td>Play the game for a total of one, just one, hour.</td>
+                                        <td>300</td>
+                                        <td>Yes</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Earn over 1 billion dollars</td>
+                                        <td>Help the world become a better place</td>
+                                        <td>900</td>
+                                        <td>Yes</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Cure cancer</td>
+                                        <td>Donate 5 trillion dollars</td>
+                                        <td>44,000,000</td>
+                                        <td>No</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Movie Certified</td>
+                                        <td>Have your charity become a main organization in a hollywood movie. </td>
+                                        <td>0</td>
+                                        <td>No</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </template>        
+
+                    <template name = "div6">
+                        <div class="header">
+                            <h1>Donations</h1>
+                            <h2>Give to the world.</h2>
+                        </div>
+
+                        <div class="content">
+
+
+
+                            <p> Total donated money is what determines the weekly winners for the game. </p>
+
+                            <h2 class="content-subhead">Current amount donated:</h2>
+                            <p>$903,233,238</p>
+
+                            <h2 class="content-subhead">Donate Money:</h2>
+
+                            <form class="pure-form">
+                                <fieldset>
+                                    <legend>Enter amount:</legend>
+
+                                    <input type="number" placeholder="Amount">
+
+
+                                        <button type="submit" class="pure-button pure-button-primary">Donate</button>
+                                    </fieldset>
+                                </form>
+
+
+                            </div>
+                        </template>                
+
+                        <template name = "div7">
+                            <div class="header">
+                                <h1>Prizes</h1>
+                                <h2>Rewards for your efforts.</h2>
+                            </div>
+
+                            <div class="content">
+
+
+
+                                <p> Weekly and Monthly winners will be announced on the main page. </p>
+
+                                <h2 class="content-subhead">Weekly Winner</h2>
+                                <p>Extra 10% of Money added total donated.</p>
+
+                                <h2 class="content-subhead">Monthly Winner:</h2>
+                                <p>Pizza Party!</p>
+
+
+                            </div>
+                        </template>
+
+                        <template name = "div8">
+                            <div class="header">
+                                <h1>Learn More</h1>
+                                <h2>Because Knowledge is Power!</h2>
+                            </div>
+
+                            <div class="content">
+
+
+
+                                <p> Learning </p>
+
+
+
+
+                            </div>
+                        </template>            
+
+
+
