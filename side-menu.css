@@ -5,6 +5,74 @@ body {
 /*
  Add transition to containers so they can push in and out.
  */
+
+
+
+.pure-button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+    color: white;
+    border-radius: 4px;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 100px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.moveover{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    direction: rtl;
+    text-align: right;
+}
+
+.slide{
+    position: absolute;
+    right: 20px;
+    direction: rtl;
+    text-align: right;
+}
+
+
+
+.Absolute-Center { 
+  height: 50%; 
+  width: 100%; 
+  overflow: auto; 
+  margin: auto; 
+  position: absolute; 
+  top: 0; left: 0; bottom: 0; right: 0; 
+}
+
+
+ .hero {
+    
+    margin: 6em auto 3em;
+    text-align: center;
+
+}
+    .hero-titles {
+        font-family: "omnes-pro", sans-serif;
+        padding: 0 2em;
+
+    }
+    .hero h1 {
+        font-size: 800%;
+        margin: 0;
+        padding: 0;
+        color: #1f8dd6;
+        font-weight: 100;
+    }
+    .hero h2 {
+        font-weight: 100;
+        font-size: 260%;
+        margin: 0.02em 0 0.8em;
+        color: #666;
+    }
+
+/*
+ Add transition to containers so they can push in and out.
+ */
 #layout,
 #menu,
 .pure-menu-link {
@@ -77,6 +145,7 @@ body {
     background: #191818;
     overflow-y: auto;
     -webkit-overflow-scroll: touch; /* for smooth scrolling on mobile */
+    font-size: 104%;
 }
 /*
  All anchors inside the menu should be styled like this.
@@ -84,7 +153,7 @@ body {
 #menu a {
     color: #999;
     border: none;
-    padding: 0.6em 0 0.6em 0.6em;
+    padding: 0.6em 0 0.9em 0.6em;
 }
 
 /*
