@@ -1,29 +1,24 @@
 <template name = "login">
 
-
+     <div class="overlay" 
         <div class="moveover">
-        <ul>
-            <ul>{{loginButtons align="right"}}</li> 
-        </ul>
+            <ul>
+                <ul>{{loginButtons align="right"}}</li> 
+            </ul>
+        </div>
+
+        <div class="Absolute-Center">
+            <div class="hero">
+                <div class="hero-titles">
+                    <h1>Charity Click</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>Raising awareness, one click at a time.</h2>
+                    </div>
+                </div>
+        </div>
     </div>
- 
- <div class="Absolute-Center">
-    <div class="hero">
-    <div class="hero-titles">
-
-        <h1>Charity Click</h1>
-        <br>
-        <br>
-        <br>
-
-
-
-        <h2>Raising awareness, one click at a time.</h2>
-    </div>
-
-   
-    </div>
-</div>
 
 </template>
 
@@ -38,17 +33,17 @@
             <a class="pure-menu-heading" href="index.html">Home</a>
             <ul>
                 <li><a id="1"  class = "ld" class="pure-menu-selected menu-item-divided ld">Profile</a></li>
-                <li><a id="2" class = "ld">Rankings</a></li>
-                <li>
-                    <a id="3" class = "ld" >Control Center</a>
-                </li>
-                <li><a id="4" class = "ld" >Upgrades</a></li>
-                <li><a id="5" class = "ld">Achievements</a></li>
-                <li><a id="6" class = "ld">Donations</a></li>
-                <li class="menu-item-divided">
-                    <a  id="7" class = "ld">Prizes</a>
-                </li>
-                <li><a  id="8" class = "ld">Learn more</a></li>
+                    <li><a id="2" class = "ld">Rankings</a></li>
+                    <li>
+                        <a id="3" class = "ld" >Control Center</a>
+                    </li>
+                    <li><a id="4" class = "ld" >Upgrades</a></li>
+                    <li><a id="5" class = "ld">Achievements</a></li>
+                    <li><a id="6" class = "ld">Donations</a></li>
+                    <li class="menu-item-divided">
+                        <a  id="7" class = "ld">Prizes</a>
+                    </li>
+                    <li><a  id="8" class = "ld">Learn more</a></li>
             </ul>
         </div>
         
@@ -65,12 +60,13 @@
 <div class="content">
 
     <h2 class="content-head">User : {{loginButtons}}</h2>
+    {{#if currentUser}}
     <h2 class="content-subhead">Money:</h2>
     <p>${{formatCurrency user.money}}</p>
     <h2 class="content-subhead">Rate:</h2>
     <p>${{formatCurrency user.rate}}</p>
+    {{/if}}
 
-    
 </div>
 
 </template>

@@ -1,5 +1,5 @@
   Accounts.ui.config({
-    passwordSignupFields: 'USERNAME_ONLY'
+    passwordSignupFields: 'USERNAME_AND_EMAIL'
   });
   
   Meteor.subscribe('userData');
@@ -70,21 +70,6 @@
   });
 
 
-
-//Matthew is too cool.
-var numDivs = 8;
-var numPurchases = 4;
-var yourClicks = 400;
-
-$(function(){
-    hideStuff(1);
-    updatePurchasable();
-    updateClicks();
-
-//What you need to do is take all of the #men divs and put them into their own templates. Then, choose when to show and hide the templates
-});
-
-
 function switchTabs(templateName){
     console.log('it actually does stuff');
     var fragment = Meteor.render( function() {
@@ -99,23 +84,6 @@ Meteor.methods({
   }
 });
 
-// function hideStuff(n){
-//   console.log('debug abc');
-//     for(var i = 1; i <= numDivs; i++){
-//         if(n!=i){
-//             $('#div' + i).hide();
-//             $('#men' + i).removeClass();
-//         }
-//         else{
-//             $('#div' + n).show();
-//             $('#men' + i).removeClass().addClass('pure-menu-selected menu-item-divided');
-//         }
-//     }
-// }
-
-
-
- 
 
 function updatePurchasable(){//Are we going to base purchasing upgrades on click-count or on $$$ donated?
   for(var i = 1; i <= numPurchases; i++){
@@ -127,8 +95,6 @@ function updatePurchasable(){//Are we going to base purchasing upgrades on click
       $('#but' + i).removeClass().addClass("pure-button pure-button-disabled ld");
   }
 }
-
-
 
 
 function updateClicks(){
@@ -145,8 +111,8 @@ function increaseClicks( event ){
   updatePurchasable();  
 }
 
-Meteor.startup(function(){
+// Meteor.startup(function(){
 
-  switchTabs('div1');
+//   switchTabs('div1')
 
-});
+// });
