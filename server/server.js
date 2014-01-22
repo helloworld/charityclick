@@ -13,7 +13,7 @@
       Meteor.users.find({}).map(function(user) {
         Meteor.users.update({_id: user._id}, {$inc: {'money': user.rate}})
       });
-    }, 10)
+    }, 1000)
 
     
 
