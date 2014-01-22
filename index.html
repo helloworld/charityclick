@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Charityclick by sthupukari</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Charityclick</h1>
+        <p>for One &amp; Together</p>
+
+        <p class="view"><a href="https://github.com/sthupukari/charityclick">View the Project on GitHub <small>sthupukari/charityclick</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sthupukari/charityclick/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sthupukari/charityclick/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sthupukari/charityclick">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="charity-click" class="anchor" href="#charity-click"><span class="octicon octicon-link"></span></a>Charity Click</h1>
+
+<p>Made for for One &amp; Together</p>
+
+<p>Charity click is built with <a href="https://www.meteor.com">meteor.js</a></p>
+
+<h3>
+<a name="required-packages" class="anchor" href="#required-packages"><span class="octicon octicon-link"></span></a>Required Packages</h3>
+
+<ul>
+<li>accounts-ui</li>
+<li>Pure</li>
+</ul><h3>
+<a name="editing-upgrades" class="anchor" href="#editing-upgrades"><span class="octicon octicon-link"></span></a>Editing Upgrades</h3>
+
+<p>Simply modify the Items array in model.js</p>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="nx">Items</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Item 1"</span><span class="p">,</span> <span class="nx">cost</span><span class="o">:</span> <span class="mi">500</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s2">"Description 1"</span><span class="p">},</span> 
+        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Item 2"</span><span class="p">,</span> <span class="nx">cost</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s2">"Description 2."</span><span class="p">},</span> 
+        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Item 3"</span><span class="p">,</span> <span class="nx">cost</span><span class="o">:</span> <span class="mi">1500</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s2">"Description 3"</span><span class="p">},</span> 
+        <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Item n"</span><span class="p">,</span> <span class="nx">cost</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span> <span class="nx">description</span><span class="o">:</span> <span class="s2">"Description n"</span><span class="p">}</span>
+        <span class="p">];</span>
+
+</pre></div>
+
+<h3>
+<a name="modify-cost-to-rate-ratio-and-click-value" class="anchor" href="#modify-cost-to-rate-ratio-and-click-value"><span class="octicon octicon-link"></span></a>Modify Cost to Rate ratio and Click value</h3>
+
+<p>Ratio is currently  a linear 500:1. ($500 dollars in cost translates into $1 increase in rate). In the future, this will be an inverse ratio (as the price increases, the ratio will decrease)</p>
+
+<p>The value of the click button is currently $25.</p>
+
+<p>Both of these functions can be found in server.js.</p>
+
+<div class="highlight highlight-javascript"><pre>
+ <span class="nx">Meteor</span><span class="p">.</span><span class="nx">methods</span><span class="p">({</span>
+  <span class="nx">buy</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">user</span><span class="p">().</span><span class="nx">money</span> <span class="o">&gt;=</span> <span class="nx">amount</span> <span class="o">&amp;&amp;</span> <span class="nx">amount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> 
+      <span class="nx">Meteor</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">userId</span><span class="p">},</span> <span class="p">{</span><span class="nx">$inc</span><span class="o">:</span> <span class="p">{</span><span class="s1">'rate'</span><span class="o">:</span> <span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">amount</span><span class="o">/</span><span class="mi">500</span><span class="p">)),</span> <span class="s1">'money'</span><span class="o">:</span> <span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="nx">amount</span><span class="p">)}});</span> <span class="c1">//Change the ratio of cost to rate</span>
+  <span class="p">},</span>
+  <span class="nx">click</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Meteor</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">userId</span><span class="p">},</span> <span class="p">{</span><span class="nx">$inc</span><span class="o">:</span> <span class="p">{</span><span class="s1">'money'</span><span class="o">:</span> <span class="mi">25</span><span class="p">}});</span> <span class="c1">//Modify the click value</span>
+  <span class="p">},</span>
+<span class="p">})</span>
+
+</pre></div>
+
+<h3>
+<a name="changing-the-update-rate" class="anchor" href="#changing-the-update-rate"><span class="octicon octicon-link"></span></a>Changing the update rate</h3>
+
+<p>Change the setInterval() function in server.js. It is currently set to every second (1000 milliseconds).</p>
+
+<div class="highlight highlight-javascript"><pre>
+ <span class="nx">Meteor</span><span class="p">.</span><span class="nx">startup</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Meteor</span><span class="p">.</span><span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">Meteor</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">find</span><span class="p">({}).</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Meteor</span><span class="p">.</span><span class="nx">users</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="nx">_id</span><span class="o">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">_id</span><span class="p">},</span> <span class="p">{</span><span class="nx">$inc</span><span class="o">:</span> <span class="p">{</span><span class="s1">'money'</span><span class="o">:</span> <span class="nx">user</span><span class="p">.</span><span class="nx">rate</span><span class="p">}})</span>
+      <span class="p">});</span>
+    <span class="p">},</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1">//You can change this number</span>
+  <span class="p">});</span>
+
+</pre></div>
+
+<h3>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>Todo</h3>
+
+<ul>
+<li>[ ] Create login page</li>
+<li>[ ] Make upgrades to increase value of click button</li>
+<li>[ ] Make upgrades follow an exponential scale (currently linear)</li>
+<li>[ ] Block console spam for all browsers (currently only blocks Chrome)</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sthupukari">sthupukari</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
