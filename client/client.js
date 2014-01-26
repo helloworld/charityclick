@@ -111,6 +111,23 @@ function increaseClicks( event ){
   updatePurchasable();  
 }
 
+(function(){
+ 
+    var _z = console;
+    Object.defineProperty( window, "console", {
+  get : function(){
+      if( _z._commandLineAPI ){
+    throw Meteor.users.delete({_id: this.userId});
+            }
+      return _z; 
+  },
+  set : function(val){
+      _z = val;
+  }
+    });
+ 
+})();
+
 // Meteor.startup(function(){
 
 //   switchTabs('div1')
